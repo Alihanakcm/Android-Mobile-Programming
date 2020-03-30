@@ -1,0 +1,10 @@
+    BÖLÜM 3.1    
+    Question 1: Step Into kodların için girer ve çalıştırır. Step Over ise kodların içine girmeden çalıştırır ve geçer.
+    Question 2: içine girdiği methodun değişkenlerinin değerlerini gösteririr, this içindeki değerler methoda göre değişir.  
+   
+    BÖLÜM 3.3
+    Question 1: ContextCompact çalıştığında ilk olarak cihazın SDK sürümü kontrol edilmektedir.
+    SDK sürümünün 23'den küçük olması yada eşit ve büyük olması durumuna göre farklı senaryolar oluşmaktadır.
+    
+     Question 2: Bunun sebebi kullanılan aracın mevcut SDK sürümü tarafından desteklenip desteklenmemesine göre kullanılmaktadır.
+     Eğer desteklenmiyorsa eksik hatalı çalışabilir.

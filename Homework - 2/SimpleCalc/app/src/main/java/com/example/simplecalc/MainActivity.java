@@ -12,7 +12,7 @@ public class MainActivity extends AppCompatActivity {
 
     // Question 1: Step Into kodların için girer ve çalıştırır. Step Over ise kodların içine girmeden çalıştırır ve geçer.
     // Question 2: içine girdiği methodun değişkenlerinin değerlerini gösteririr, this içindeki değerler methoda göre değişir.
-    // Question
+ 
 
     private static String TAG = "CalculatorActivity";
 
