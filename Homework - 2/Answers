@@ -6,5 +6,11 @@
     Question 1: ContextCompact çalıştığında ilk olarak cihazın SDK sürümü kontrol edilmektedir.
     SDK sürümünün 23'den küçük olması yada eşit ve büyük olması durumuna göre farklı senaryolar oluşmaktadır.
     
-     Question 2: Bunun sebebi kullanılan aracın mevcut SDK sürümü tarafından desteklenip desteklenmemesine göre kullanılmaktadır.
-     Eğer desteklenmiyorsa eksik hatalı çalışabilir.
+    Question 2: Bunun sebebi kullanılan aracın mevcut SDK sürümü tarafından desteklenip desteklenmemesine göre kullanılmaktadır.
+    Eğer desteklenmiyorsa eksik hatalı çalışabilir.
+
+    BÖLÜM 4.1
+     Question 1: The major difference is that checkboxes enable multiple selections, while a RadioGroup allows only one selection.
+     Question 2: LinearLayout
+     Question 3: isChecked()
+
