@@ -21,3 +21,11 @@
      Question 3: Use registerForContextMenu() in the onCreate() method.
      Question 4: In the onCreateContextMenu() method.
 
+    BÖLÜM 4.3
+     Question 1: Toolbar
+     Question 2: Çünkü GridLayout grid(ızgara)  yapısından dolay eleman yerleştirmek için daha avantajlı bir kullanım sağlar.
+     Question 3: In activity_main.xml for the MainActivity.
+     Question 4: To provide the Up button for a child screen activity, declare the child activity's parent in the activity_main.xml file.
+     Question 5: Use the following code in a public method (assuming the other activity is called OtherActivity):
+    Intent intent = new Intent(this, OtherActivity.class); startActivity(intent);
+

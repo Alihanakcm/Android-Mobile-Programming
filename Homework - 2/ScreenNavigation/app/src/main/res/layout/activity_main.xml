@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <FrameLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true">
+
+        <androidx.gridlayout.widget.GridLayout
+            android:layout_width="360dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="120dp">
+
+            <ImageView
+                android:id="@+id/donut_circle"
+                android:layout_width="90dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:src="@drawable/donut_circle"
+                app:layout_column="0"
+                app:layout_row="0" />
+
+            <ImageView
+                android:id="@+id/froyo_circle"
+                android:layout_width="90dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="20dp"
+                android:src="@drawable/froyo_circle"
+                app:layout_column="1"
+                app:layout_row="0" />
+
+            <ImageView
+                android:id="@+id/icecream_circle"
+                android:layout_width="90dp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/icecream_circle"
+                app:layout_column="2"
+                app:layout_row="0" />
+        </androidx.gridlayout.widget.GridLayout>
+
+    </FrameLayout>
+</RelativeLayout>
