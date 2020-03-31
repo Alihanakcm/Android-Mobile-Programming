@@ -13,4 +13,11 @@
      Question 1: The major difference is that checkboxes enable multiple selections, while a RadioGroup allows only one selection.
      Question 2: LinearLayout
      Question 3: isChecked()
+    
+    BÖLÜM 4.2
+     Question 1: Dosya adı : floating_context_menu dosya konumu : /ScrollingText/app/src/main/res/menu/floating_context_menu.xml
+     Question 2: When a registered view receives a long-click event, the system calls the onCreateContextMenu() method, which you
+    can override in your activity or fragment.
+     Question 3: Use registerForContextMenu() in the onCreate() method.
+     Question 4: In the onCreateContextMenu() method.
 
