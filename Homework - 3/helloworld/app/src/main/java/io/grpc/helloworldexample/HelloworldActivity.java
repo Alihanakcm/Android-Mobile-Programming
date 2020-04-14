@@ -32,6 +32,9 @@ import android.widget.TextView;
 
 import com.google.gson.JsonObject;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 import io.grpc.examples.helloworld.GreeterGrpc;
@@ -74,7 +77,7 @@ public class HelloworldActivity extends AppCompatActivity {
                         portEdit.getText().toString());
     }
 
-    private static class GrpcTask extends AsyncTask<String, Void, String> {
+    private static class GrpcTask extends AsyncTask<String, Void, JSONObject> {
         private final WeakReference<Activity> activityReference;
         private ManagedChannel channel;
 
@@ -83,28 +86,31 @@ public class HelloworldActivity extends AppCompatActivity {
         }
 
         @Override
-        protected String doInBackground(String... params) {
+        protected JSONObject doInBackground(String... params) {
             String host = params[0];
             String message = params[1];
             String portStr = params[2];
+            JSONObject json;
             int port = TextUtils.isEmpty(portStr) ? 0 : Integer.valueOf(portStr);
             try {
                 channel = ManagedChannelBuilder.forAddress(host, port).usePlaintext().build();
                 GreeterGrpc.GreeterBlockingStub stub = GreeterGrpc.newBlockingStub(channel);
                 HelloRequest request = HelloRequest.newBuilder().setName(message).build();
                 HelloReply reply = stub.sayHello(request);
-                return reply.getMessage();
+                JSONParser jsonParser = new JSONParser();
+                json = jsonParser.getJSONFromUrl(reply.getMessage());
+                return json;
             } catch (Exception e) {
                 StringWriter sw = new StringWriter();
                 PrintWriter pw = new PrintWriter(sw);
                 e.printStackTrace(pw);
                 pw.flush();
-                return String.format("Failed... : %n%s", sw);
+                return new JSONObject();
             }
         }
 
         @Override
-        protected void onPostExecute(String result) {
+        protected void onPostExecute(JSONObject result) {
             try {
                 channel.shutdown().awaitTermination(1, TimeUnit.SECONDS);
             } catch (InterruptedException e) {
@@ -114,11 +120,15 @@ public class HelloworldActivity extends AppCompatActivity {
             if (activity == null) {
                 return;
             }
-            JSONParser jsonParser = new JSONParser();
-            JsonObject jsonObject = jsonParser.getJSONFromUrl(result);
+            /*JSONParser jsonParser = new JSONParser();
+            JsonObject jsonObject = jsonParser.getJSONFromUrl(result);*/
             TextView resultText = (TextView) activity.findViewById(R.id.grpc_response_text);
             Button sendButton = (Button) activity.findViewById(R.id.send_button);
-            resultText.setText(jsonObject.toString());
+            try {
+                resultText.setText(result.getString("message"));
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
             sendButton.setEnabled(true);
         }
     }

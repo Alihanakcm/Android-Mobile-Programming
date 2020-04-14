@@ -29,3 +29,4 @@
      Question 5: Use the following code in a public method (assuming the other activity is called OtherActivity):
     Intent intent = new Intent(this, OtherActivity.class); startActivity(intent);
 
+Github link: https://github.com/Alihanakcm/Android-Mobile-Programming/tree/master/Homework%20-%202

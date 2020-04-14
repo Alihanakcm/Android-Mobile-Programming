@@ -5,31 +5,26 @@ import android.util.Log;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 
+import org.json.JSONObject;
+
 public class JSONParser {
 
+    JSONObject jsonObject = null;
 
     public JSONParser() {
 
     }
 
-    public JsonObject getJSONFromUrl(String message) {
-
-        StringBuilder stringBuilder = new StringBuilder();
-        stringBuilder.append("{\"");
-        for (char word : message.toCharArray()) {
-            if (word != ' ')
-                stringBuilder.append(word);
-            else
-                stringBuilder.append("\" : \"");
-        }
-        stringBuilder.append("\"}");
+    public JSONObject getJSONFromUrl(String message) {
 
         try {
-            if (message != null)
-                return (JsonObject) JsonParser.parseString(stringBuilder.toString());
-        } catch (Exception exception) {
-            exception.printStackTrace();
+            if (message != null) {
+                jsonObject = new JSONObject();
+                jsonObject.put("message", message);
+            }
+        } catch (Exception excption) {
+            excption.printStackTrace();
         }
-        return null;
+        return jsonObject;
     }
 }
