@@ -120,8 +120,7 @@ public class HelloworldActivity extends AppCompatActivity {
             if (activity == null) {
                 return;
             }
-            /*JSONParser jsonParser = new JSONParser();
-            JsonObject jsonObject = jsonParser.getJSONFromUrl(result);*/
+
             TextView resultText = (TextView) activity.findViewById(R.id.grpc_response_text);
             Button sendButton = (Button) activity.findViewById(R.id.send_button);
             try {
