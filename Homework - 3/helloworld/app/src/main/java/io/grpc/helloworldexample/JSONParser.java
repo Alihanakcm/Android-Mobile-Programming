@@ -19,8 +19,7 @@ public class JSONParser {
 
         try {
             if (message != null) {
-                jsonObject = new JSONObject();
-                jsonObject.put("message", message);
+                jsonObject = new JSONObject(message);
             }
         } catch (Exception excption) {
             excption.printStackTrace();
